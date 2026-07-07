@@ -1,0 +1,64 @@
+
+[2026-06-02 15:34:57.871688]
+You: hello
+Bot: Hi! Welcome.
+
+[2026-06-02 15:35:28.905979]
+You: how are you
+Bot: I am fine. Thank you!
+
+[2026-06-02 15:35:39.830675]
+You: jokes
+Bot: Why do programmers prefer dark mode? Because light attracts bugs!
+
+[2026-06-02 15:36:20.860138]
+You: enter note
+Bot: I am still learning.
+
+[2026-06-02 15:39:59.920041]
+You: cd "/Users/chiragpanchal/Desktop/Python projects"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:39:59.921719]
+You: python -u "/Users/chiragpanchal/Desktop/Python projects/tempCodeRunnerFile.py"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:40:06.781323]
+You: cd "/Users/chiragpanchal/Desktop/Python projects"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:40:06.781859]
+You: python -u "/Users/chiragpanchal/Desktop/Python projects/tempCodeRunnerFile.py"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:40:10.481105]
+You: cd "/Users/chiragpanchal/Desktop/Python projects"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:40:10.481527]
+You: python -u "/Users/chiragpanchal/Desktop/Python projects/tempCodeRunnerFile.py"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:41:39.667858]
+You: cd "/Users/chiragpanchal/Desktop/Python projects"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:41:39.668463]
+You: python -u "/Users/chiragpanchal/Desktop/Python projects/personal_search_engine.py"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:41:45.279388]
+You: cd "/Users/chiragpanchal/Desktop/Python projects"
+Bot: Python is a powerful programming language.
+
+[2026-06-02 15:41:45.279801]
+You: python -u "/Users/chiragpanchal/Desktop/Python projects/personal_search_engine.py"
+Bot: Python is a powerful programming language.
+
+[2026-06-18 11:51:28.114777]
+You: Tell me a joke
+Bot: Why do programmers prefer dark mode? Because light attracts bugs!
+
+[2026-06-18 11:52:35.358171]
+You: What time is it?
+Bot: Current Time: 11:52:35 AM

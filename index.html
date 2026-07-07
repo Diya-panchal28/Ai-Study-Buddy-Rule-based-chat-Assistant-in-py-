@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart AI & Search Suite</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Premium Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-brand">
+                <i class="fa-solid fa-bolt brand-icon"></i>
+                <h2>SmartSuite</h2>
+            </div>
+            
+            <nav class="sidebar-menu">
+                <button class="menu-item active" data-tab="chat">
+                    <i class="fa-solid fa-comments"></i>
+                    <span>AI ChatBot</span>
+                </button>
+                <button class="menu-item" data-tab="notes">
+                    <i class="fa-solid fa-note-sticky"></i>
+                    <span>Smart Notes</span>
+                </button>
+                <button class="menu-item" data-tab="search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <span>Search Engine</span>
+                </button>
+            </nav>
+            
+            <div class="sidebar-footer">
+                <div class="status-indicator online">
+                    <span class="dot"></span>
+                    <span class="status-text">Server Connected</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Dashboard View -->
+        <main class="main-content">
+            <!-- Header bar -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1 id="page-title">AI ChatBot</h1>
+                    <p class="header-subtitle" id="page-subtitle">Interact with your smart assistant</p>
+                </div>
+                <div class="header-right">
+                    <div class="time-widget">
+                        <i class="fa-regular fa-clock"></i>
+                        <span id="current-time">12:00:00 PM</span>
+                    </div>
+                    <div class="date-widget">
+                        <i class="fa-regular fa-calendar"></i>
+                        <span id="current-date">18-06-2026</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Content Panel Wrapper -->
+            <div class="content-body">
+                
+                <!-- Chat Panel -->
+                <section class="tab-panel active" id="panel-chat">
+                    <div class="chat-container">
+                        <div class="chat-messages" id="chat-box">
+                            <!-- Dynamically populated messages -->
+                            <div class="message-bubble system-message">
+                                <i class="fa-solid fa-robot"></i>
+                                <span>Smart Chatbot initiated. Ask me anything or click suggestions below!</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Auto-suggest chips -->
+                        <div class="suggestion-chips-container">
+                            <span class="suggestion-label">Suggestions:</span>
+                            <div class="chips-wrapper">
+                                <button class="suggestion-chip">Tell me a joke</button>
+                                <button class="suggestion-chip">What is python?</button>
+                                <button class="suggestion-chip">What time is it?</button>
+                                <button class="suggestion-chip">How are you?</button>
+                            </div>
+                        </div>
+
+                        <!-- Chat input area -->
+                        <div class="chat-input-bar">
+                            <input type="text" id="chat-input" placeholder="Type your message here..." autocomplete="off">
+                            <button id="btn-send-chat">
+                                <span>Send</span>
+                                <i class="fa-solid fa-paper-plane"></i>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Notes Panel -->
+                <section class="tab-panel" id="panel-notes">
+                    <div class="notes-layout">
+                        <!-- Left pane: Input note -->
+                        <div class="notes-form-container">
+                            <div class="glass-card">
+                                <h3>Create a Note</h3>
+                                <div class="form-group">
+                                    <textarea id="note-input" placeholder="Write something important here..." rows="6"></textarea>
+                                </div>
+                                <button id="btn-save-note" class="btn btn-primary">
+                                    <i class="fa-solid fa-plus"></i>
+                                    <span>Save Note</span>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Right pane: List of notes -->
+                        <div class="notes-feed-container">
+                            <div class="notes-header">
+                                <h3>Your Saved Notes</h3>
+                                <span class="notes-count" id="notes-counter">0 notes</span>
+                            </div>
+                            <div class="notes-grid" id="notes-grid">
+                                <!-- Dynamically loaded notes -->
+                                <div class="no-notes-message">
+                                    <i class="fa-regular fa-clipboard"></i>
+                                    <p>No notes saved yet. Type a note on the left and hit Save.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Search Panel -->
+                <section class="tab-panel" id="panel-search">
+                    <!-- Scanner and filter settings -->
+                    <div class="search-top-bar glass-card">
+                        <div class="scan-section">
+                            <label for="scan-path-input"><i class="fa-solid fa-folder-open"></i> Local Path:</label>
+                            <input type="text" id="scan-path-input" placeholder="Enter absolute directory path to scan...">
+                            <button id="btn-scan" class="btn btn-primary">
+                                <i class="fa-solid fa-arrows-rotate"></i>
+                                <span>Scan</span>
+                            </button>
+                            <button id="btn-load" class="btn btn-secondary">
+                                <i class="fa-solid fa-cloud-arrow-down"></i>
+                                <span>Load Index</span>
+                            </button>
+                        </div>
+                        
+                        <div class="search-controls">
+                            <div class="search-box">
+                                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                                <input type="text" id="search-input" placeholder="Search file names or contents...">
+                            </div>
+                            <div class="filter-box">
+                                <label for="filter-type">Type:</label>
+                                <select id="filter-type">
+                                    <option value="All">All Formats</option>
+                                    <option value="txt">TXT</option>
+                                    <option value="py">Python (.py)</option>
+                                    <option value="json">JSON</option>
+                                    <option value="html">HTML</option>
+                                    <option value="css">CSS</option>
+                                    <option value="js">JavaScript (.js)</option>
+                                    <option value="png">PNG</option>
+                                    <option value="jpg">JPG/JPEG</option>
+                                    <option value="md">Markdown (.md)</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="search-status" id="search-status-bar">
+                            Ready. Try scanning the directory.
+                        </div>
+                    </div>
+
+                    <!-- Main Search View Split -->
+                    <div class="search-split-layout">
+                        <!-- Left pane: Results list -->
+                        <div class="search-results-pane glass-card">
+                            <div class="pane-header">
+                                <h3>Search Results</h3>
+                                <span class="results-count" id="results-counter">0 files</span>
+                            </div>
+                            <div class="results-wrapper">
+                                <ul class="results-list" id="results-list">
+                                    <!-- Search results loaded dynamically -->
+                                    <li class="empty-list-placeholder">
+                                        <i class="fa-solid fa-hourglass-empty"></i>
+                                        <p>No results. Make sure you scanned a directory or loaded an index.</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Right pane: Previewer -->
+                        <div class="search-preview-pane glass-card">
+                            <div class="pane-header" id="preview-header">
+                                <h3>File Preview</h3>
+                                <div class="preview-actions hidden" id="preview-actions">
+                                    <button id="btn-open-file" class="btn btn-sm btn-secondary" title="Open file locally on system">
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i> Open File
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="preview-content-box" id="preview-box">
+                                <div class="empty-preview-placeholder">
+                                    <i class="fa-regular fa-file-code"></i>
+                                    <p>Select a file from the list to preview its contents.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+        </main>
+    </div>
+
+    <!-- Script -->
+    <script src="/static/script.js"></script>
+</body>
+</html>
